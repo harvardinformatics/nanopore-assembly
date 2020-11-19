@@ -1,5 +1,5 @@
 # A quick-start guide to Nanopore assembly
-This guide is intended as a brief overview guiding you through steps of generating an assembly from single molecule real-time (SMRT) sequencing using Oxford Nanopore, from initial sample preparation to a finished assembly. A more detailed summary and comparison of methods can be found at XXX.
+This guide is intended as a brief overview guiding you through steps of generating an assembly from single molecule real-time (SMRT) sequencing using Oxford Nanopore, from initial sample preparation to a finished assembly.
 
 ## Pipeline overview:  
 The general steps for an assembly using Oxford Nanopore Technology (ONT) is as follows:
@@ -69,7 +69,6 @@ flye --nano-raw $reads -g 180m -o /n/boslfs02/LABS/informatics/dkhost/dmel_flye 
 
 </code></pre>
 
-A more detailed comparison of different assemblers, as well as a description of the their methods can be found at XXX. Scripts for running other assemblers are available at XXX.
 
 ### Polishing
 Finally, due to the high error rate of ONT reads, assemblies need to be polished in order to achieve accuracies comparable to 2nd generation sequencing such as Illumina. This can be done in two ways: self-correction with ONT data (assuming high enough coverage) or correction with Illumina reads. Doing both polishing steps is ideal, though in our experience polishing with Illumina is far more impactful in improving accuracies. In addition, we have found that correction with Illumina *followed by* self-correction with ONT can lead to a **decrease** in accuracy, so if performing both rounds of polish it is important to self-correct *first*.
